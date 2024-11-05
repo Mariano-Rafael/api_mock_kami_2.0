@@ -8,7 +8,6 @@ import pgmais.ia.api_mock_kami_20.models.Debt;
 import pgmais.ia.api_mock_kami_20.models.DebtRequest;
 import pgmais.ia.api_mock_kami_20.services.DebtService;
 
-
 import java.util.List;
 
 @RestController
