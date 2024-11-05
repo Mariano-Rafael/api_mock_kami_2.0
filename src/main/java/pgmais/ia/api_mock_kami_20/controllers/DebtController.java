@@ -6,7 +6,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pgmais.ia.api_mock_kami_20.models.Debt;
 import pgmais.ia.api_mock_kami_20.models.DebtRequest;
-import pgmais.ia.api_mock_kami_20.repositories.DebtRepository;
 import pgmais.ia.api_mock_kami_20.services.DebtService;
 
 
@@ -16,8 +15,8 @@ import java.util.List;
 @RequestMapping("/api")
 public class DebtController {
 
-    private DebtRepository debtRepository;
-    private final DebtService debtService;
+    @Autowired
+    private DebtService debtService;
 
     @Autowired
     public DebtController(DebtService debtService) {

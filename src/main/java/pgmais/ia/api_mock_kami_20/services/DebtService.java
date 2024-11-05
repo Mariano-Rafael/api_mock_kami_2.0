@@ -9,15 +9,12 @@ import java.util.List;
 
 @Service
 public class DebtService {
-    private final DebtRepository debtRepository;
 
-
-    public DebtService(DebtRepository debtRepository) {
-        this.debtRepository = debtRepository;
-    }
+    @Autowired
+    private DebtRepository debtRepository;
 
     public List<Debt> findDebtsByDocument(String document) {
-        return debtRepository.findByDocument(document);
+        return debtRepository.findDebtsByDocument(document);
     }
 }
 

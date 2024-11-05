@@ -1,11 +1,12 @@
 package pgmais.ia.api_mock_kami_20.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "client_debts")
 public class Debt {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private int clientId;
     private String document;
