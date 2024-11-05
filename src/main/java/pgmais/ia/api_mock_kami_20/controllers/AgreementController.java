@@ -5,12 +5,16 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import pgmais.ia.api_mock_kami_20.models.Agreement;
 import pgmais.ia.api_mock_kami_20.models.AgreementRequest;
 import pgmais.ia.api_mock_kami_20.services.AgreementService;
 
 import java.util.List;
 
+@RestController
+@RequestMapping("/api")
 public class AgreementController {
 
     @Autowired
@@ -21,7 +25,7 @@ public class AgreementController {
         this.agreementService = agreementService;
     }
 
-    @PostMapping("/offers")
+    @PostMapping("/agreements")
     public ResponseEntity<?> findAgreementByClientIdAndOfferId(@RequestBody AgreementRequest agreementRequest) {
 
         Integer clientId = agreementRequest.getClientId();
